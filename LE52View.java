@@ -1,5 +1,3 @@
-package application;
-
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -47,28 +45,68 @@ public class LE52View {
         hangmanPane.setPrefSize(200,250);
         hangmanPane.setStyle("-fx-background-color: #2E2E3E;");
         
-		guessBtn.setOnAction(e -> {
-			
-			if (inputField.getText().trim().isEmpty()) return;
-			char guess = inputField.getText().trim().charAt(0);
-			String result = game.guessLetter(guess);
-			wordLabel.setText(game.getDisplayWord());
-			statusLabel.setText(result);
-			missesLabel.setText("Misses: " + game.getMisses());
-			inputField.clear();
-			
-			drawHangman(game.getMisses());
-			
-			if (game.isWordComplete()) {
-				statusLabel.setText("The word is " + game.getWord() + ". You missed " + game.getMisses() + " time(s).");
+		guessBtn.setOnAction(e -> 
+		{
+			String input = inputField.getText().trim();
+			if(input.isEmpty())
+			{
+				statusLabel.setText("Please enter a single letter.");
+				return;
+			}
+
+			else if(input.length() > 1)
+			{
+				statusLabel.setText("Please enter only one letter at a time.");
+				return;
+			}
+
+			else if(!Character.isLetter(input.charAt(0)))
+			{	
+				statusLabel.setText("Invalid input. Please enter a letter (A-Z).");
+				return;
+			}
+
+			else
+			{
+				statusLabel.setText("");
 				
+				char guess = inputField.getText().trim().charAt(0);
+				String result = game.guessLetter(guess);
+
+				wordLabel.setText(game.getDisplayWord());
+				statusLabel.setText(result);
+				missesLabel.setText("Misses: " + game.getMisses());
+				inputField.clear();
+				
+				int n = game.getMisses();
+				if(n != 0)
+				{
+					drawHangman(n);
+				}
+
+				if(n == 7)
+				{
+					inputField.setDisable(true);
+					guessBtn.setDisable(true);
+
+					statusLabel.setText("Game Over! The word was " + game.getWord() + ".");
+				}
+				
+				if(game.isWordComplete()) 
+				{
+					statusLabel.setText("The word is " + game.getWord() + ". You missed " + game.getMisses() + " time(s).");
+					
+				}
 			}
 		});
 		
 		Button resetBtn = new Button("Play Again");
 		ButtonStyler.styleActionButton(resetBtn);
-		resetBtn.setOnAction(e -> {
+		resetBtn.setOnAction(e -> 
+		{
 			game.startNewGame();
+			inputField.setDisable(false);
+			guessBtn.setDisable(false);
 			wordLabel.setText(game.getDisplayWord());
 			statusLabel.setText("");
 			missesLabel.setText("Misses: 0");
