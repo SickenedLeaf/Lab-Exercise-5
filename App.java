@@ -1,5 +1,3 @@
-package application;
-
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -17,7 +15,7 @@ import javafx.stage.Stage;
  * The {@code Main} class serves as the entry point for the Flow Control Lab Exercises application.
  * It sets up the main stage, scene, and navigation menu to access different exercises (LE31, LE32, LE33).
  */
-public class Main extends Application {
+public class App extends Application {
 
     /** The fixed window height for the application. */
     public static final int HEIGHT_WINDOW = 650;
