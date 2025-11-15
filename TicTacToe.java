@@ -1,5 +1,3 @@
-package application;
-
 /**
  * The {@code TicTacToe} class models a single game of tic-tac-toe.
  * It manages the board state, player turns, and winner detection.
