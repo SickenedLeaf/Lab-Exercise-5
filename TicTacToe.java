@@ -1,9 +1,39 @@
-/**
- * The {@code TicTacToe} class models a single game of tic-tac-toe.
- * It manages the board state, player turns, and winner detection.
- *
- * Board is a 3x3 char array with values:
- * 'X', 'O', or ' ' (empty).
+/*
+ * Class: TicTacToe
+ * -> This class implements the core game logic for a 3x3 TicTacToe game.
+ *    It manages the board state, current player turn, move validation, win/draw detection,
+ *    and offers utility functions for resetting and displaying the board.
+ * 
+ * Exclusive Functions:
+ * TicTacToe() - Default constructor that initializes the board and starts a new game.
+ * @param - none, @return - none
+ * 
+ * addMove() - Attempts to place the current player's mark at the given row and column.
+ *             Validates bounds and occupancy; on success stores the mark and switches turn.
+ * @param - int row, int col, @return - boolean (true if move applied)
+ * 
+ * getTurn() - Returns whose turn it currently is ('X' or 'O').
+ * @param - none, @return - char
+ * 
+ * hasWinner() - Returns whether a winner exists.
+ * @param - none, @return - boolean
+ * 
+ * getWinner() - Returns the winning mark ('X' or 'O') or ' ' if there is no winner.
+ * @param - none, @return - char
+ * 
+ * isBoardFull() - Checks whether the board is full (draw condition).
+ * @param - none, @return - boolean
+ * 
+ * resetGame() - Resets the board to empty and sets the current player to 'X'.
+ * @param - none, @return - void
+ * 
+ * displayBoard() - Returns a simple string representation of the board for debugging.
+ * @param - none, @return - String
+ * 
+ * Notes:
+ * - The board is a 3x3 char array, using ' ' (space) for empty cells.
+ * - addMove switches the turn after a successful placement.
+ * - getWinner checks rows, columns, and both diagonals.
  */
 public class TicTacToe {
 	
