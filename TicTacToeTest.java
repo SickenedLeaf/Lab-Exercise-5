@@ -1,3 +1,32 @@
+/*
+ * Class: TicTacToeTest
+ * -> This class contains JUnit 5 tests for the TicTacToe game logic.
+ *    It initializes a fresh TicTacToe instance before each test and verifies core behaviors:
+ *    initial turn, move application and turn switching, win detection, invalid move rejection, and reset behavior.
+ * 
+ * Exclusive Functions:
+ * setUp() - JUnit @BeforeEach method that initializes a new TicTacToe game before each test.
+ * @param - none, @return - void
+ * 
+ * testInitialTurnIsX() - Verifies that a new game starts with player 'X'.
+ * @param - none, @return - void
+ * 
+ * testAddMoveAndSwitchTurn() - Confirms addMove places a mark, switches the turn to 'O', and that the board contains 'X' where placed.
+ * @param - none, @return - void
+ * 
+ * testWinnerRow() - Plays a sequence of moves that gives X a winning row and asserts winner detection.
+ * @param - none, @return - void
+ * 
+ * testInvalidMoveOnFilledCell() - Ensures attempting to move on an occupied cell is rejected.
+ * @param - none, @return - void
+ * 
+ * testResetGame() - Verifies resetGame clears the board and resets the current player to 'X'.
+ * @param - none, @return - void
+ * 
+ * Notes:
+ * - Tests use JUnit 5 annotations and assertions.
+ * - displayBoard() string output is used in some assertions for simplicity.
+ */
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
