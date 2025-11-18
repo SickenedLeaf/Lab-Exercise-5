@@ -1,3 +1,21 @@
+/*
+ * Class: LE52View
+ * -> This class builds the JavaFX user interface for a Hangman exercise.
+ *    It composes the view (title, masked word display, input field, control buttons, status labels, and a drawing pane),
+ *    wires the UI to the Hangman game model, updates UI state on guesses/resets, and draws the hangman figure progressively on misses.
+ * 
+ * Exclusive Functions:
+ * getContent() - Builds and returns the main VBox layout containing the title, masked word label, input controls, status labels, drawing pane, and reset button.
+ * @param - none, @return - VBox
+ * 
+ * drawHangman() - Draws the hangman gallows and figure progressively based on the number of misses.
+ * @param - int misses, @return - void
+ * 
+ * Notes:
+ * - This view depends on a Hangman model class with methods: startNewGame(), getDisplayWord(), guessLetter(char), getMisses(), getWord(), and isWordComplete().
+ * - Input is validated to accept a single letter per guess; the UI disables input when the game ends.
+ * - The drawing uses simple JavaFX shapes added to a Pane and is cleared on reset.
+ */
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
