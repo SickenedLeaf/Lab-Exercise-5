@@ -1,3 +1,12 @@
+/*
+ * Laboratory Exercise 5: Arrays
+ * Contributors: Khyzian Shaun Dumoran, Renz Joseph Paranaque
+ *
+ * -> Lab 5 Contents <- 
+ * - LE 5.1: TicTacToe Game
+ * - LE 5.2: Hangman Game
+ * - LE 5.3: Password Encryption Programm
+*/
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
