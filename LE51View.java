@@ -1,3 +1,26 @@
+/*
+ * Class: LE51View
+ * -> This class builds the JavaFX user interface for a TicTacToe exercise.
+ *    It creates the board UI, connects the UI to the TicTacToe game logic, displays turn and result status,
+ *    handles player moves and resets, and highlights the winning line when the game ends.
+ * 
+ * Exclusive Functions:
+ * getContent() - Builds and returns the main VBox layout containing the title, status label, game grid, and reset button.
+ * @param - none, @return - VBox
+ * 
+ * handleMove() - Processes a user's click on a cell: validates the move, updates the game model and UI, sets status text, detects a win or draw, and prevents further moves when the game is over.
+ * @param - Button cell, int row, int col, @return - void
+ * 
+ * highlightWinner() - Scans the board for the winning line and applies winner styling to the three winning cells.
+ * @param - none, @return - void
+ * 
+ * styleWinner() - Applies green "winner" styling to the provided cell buttons.
+ * @param - Button... buttons, @return - void
+ * 
+ * Notes:
+ * - This view relies on a TicTacToe model class that exposes getTurn(), addMove(row,col), hasWinner(), getWinner(), isBoardFull(), and resetGame().
+ * - Styling and button sizing are applied inline to keep the view self-contained.
+ */
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
